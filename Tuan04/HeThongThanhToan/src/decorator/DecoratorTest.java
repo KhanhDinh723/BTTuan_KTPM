@@ -14,12 +14,12 @@ public class DecoratorTest {
 
 		System.out.println("\n--- Thanh toán bằng Thẻ Tín Dụng với Bảo mật ---");
 		Payment creditCard = new SecurityDecorator(
-				new CreditCardPayment("Đặng Lê Hữu Tiến", "1234567890123456", "123", "12/27"));
+				new CreditCardPayment("Đinh Quốc Khánh", "1234567890123456", "123", "12/27"));
 		cart.checkout(creditCard);
 
 		System.out.println("\n--- Thanh toán bằng Thẻ Tín Dụng với cả Logging và Bảo mật ---");
 		Payment secureLoggedCreditCard = new LoggingDecorator(new SecurityDecorator(
-				new CreditCardPayment("Đặng Lê Hữu Tiến", "1234567890123456", "123", "12/27")));
+				new CreditCardPayment("Đinh Quốc Khánh", "1234567890123456", "123", "12/27")));
 		cart.checkout(secureLoggedCreditCard);
 
 	}

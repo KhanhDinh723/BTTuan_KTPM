@@ -16,7 +16,7 @@ public class StateTest {
 		cart.checkout();
 
 		// Chuyển sang thanh toán bằng thẻ tín dụng
-		cart.setPaymentState(new CreditCardState("Dang le Huu Tien", "1234567890123456", "123", "12/27"));
+		cart.setPaymentState(new CreditCardState("Đinh Quốc Khánh ", "1234567890123456", "123", "1616/27"));
 		cart.checkout();
 
 	}

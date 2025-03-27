@@ -12,6 +12,6 @@ public class StrategyTest {
 		cart.pay(new PaypalStrategy("email@example.com", "password123"));
 
 		// Thanh toán bằng Thẻ Tín Dụng
-		cart.pay(new CreditCardStrategy("Dang le Huu Tien", "1234567890123456", "123", "12/27"));
+		cart.pay(new CreditCardStrategy("Đinh Quốc KhánhKhánh", "1234567890123456", "123", "12/27"));
 	}
 }
