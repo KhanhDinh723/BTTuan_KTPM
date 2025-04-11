@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: ./web
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  celery:
+    build: ./web
+    command: celery -A myproject worker --loglevel=info
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+
+networks:
+  default:
+    name: djcelery_net

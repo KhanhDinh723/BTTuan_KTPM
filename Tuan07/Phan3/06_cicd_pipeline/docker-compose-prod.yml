@@ -1,0 +1,13 @@
+version: '3'
+services:
+  app:
+    image: myapp:latest
+    command: python app.py
+  nginx:
+    image: nginx
+    ports:
+      - "80:80"
+
+networks:
+  default:
+    name: cicd_net

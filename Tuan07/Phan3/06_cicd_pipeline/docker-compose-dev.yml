@@ -1,0 +1,17 @@
+version: '3'
+services:
+  app:
+    build: ./app
+    volumes:
+      - ./app:/app
+    command: python app.py
+
+  tests:
+    build: ./tests
+    volumes:
+      - ./app:/app
+    command: pytest
+
+networks:
+  default:
+    name: cicd_net

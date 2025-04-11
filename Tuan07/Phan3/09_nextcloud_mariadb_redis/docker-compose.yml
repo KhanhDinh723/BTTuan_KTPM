@@ -1,0 +1,27 @@
+version: '3'
+services:
+  db:
+    image: mariadb
+    restart: always
+    volumes:
+      - db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+
+  redis:
+    image: redis
+    restart: always
+
+  app:
+    image: nextcloud
+    restart: always
+    ports:
+      - 80:80
+    environment:
+      MYSQL_PASSWORD: example
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  db:

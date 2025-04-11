@@ -1,0 +1,22 @@
+version: '3'
+services:
+  elasticsearch:
+    image: elasticsearch:7.9.2
+    environment:
+      - discovery.type=single-node
+      - ELASTIC_USERNAME=elastic
+      - ELASTIC_PASSWORD=changeme
+    ports:
+      - "9200:9200"
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+
+  kibana:
+    image: kibana:7.9.2
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+
+volumes:
+  esdata:

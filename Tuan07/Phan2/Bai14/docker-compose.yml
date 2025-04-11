@@ -1,0 +1,15 @@
+services:
+  app1:
+    image: busybox
+    command: sleep 9999
+    networks:
+      - mynet
+
+  app2:
+    image: busybox
+    command: sleep 9999
+    networks:
+      - mynet
+
+networks:
+  mynet:
